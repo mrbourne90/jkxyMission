@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- /* * $Id: struts-plugin.xml 722219 2008-12-01 20:41:26Z musachy $ * 
+	* Licensed to the Apache Software Foundation (ASF) under one * or more contributor 
+	license agreements. See the NOTICE file * distributed with this work for 
+	additional information * regarding copyright ownership. The ASF licenses 
+	this file * to you under the Apache License, Version 2.0 (the * "License"); 
+	you may not use this file except in compliance * with the License. You may 
+	obtain a copy of the License at * * http://www.apache.org/licenses/LICENSE-2.0 
+	* * Unless required by applicable law or agreed to in writing, * software 
+	distributed under the License is distributed on an * "AS IS" BASIS, WITHOUT 
+	WARRANTIES OR CONDITIONS OF ANY * KIND, either express or implied. See the 
+	License for the * specific language governing permissions and limitations 
+	* under the License. */ -->
+<!DOCTYPE struts PUBLIC 
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- 配置根元素 -->
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<constant name="struts.serve.static.browserCache" value="false"></constant>
+	<constant name="struts.configuration.xml.reload" value="true"></constant>
+	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.ui.theme" value="simple"></constant>
+
+	<!-- 从/Users目录下访问时 -->
+	<package name="Users" namespace="/users" extends="struts-default"
+		strict-method-invocation="false">
+		<action name="*_*" class="com.jikexueyuan.action.{1}Action"
+			method="{2}">
+			<result name="loginSuccess">/users/info.jsp</result>
+			<result name="loginFail">/users/login.jsp</result>
+			<result name="regSuccess">/users/reg.jsp</result>
+			<result name="showSuccess">/users/mgr.jsp</result>
+			<result name="getSuccess">/users/info.jsp</result>
+			<result name="deleteSuccess">/users/mgr.jsp</result>
+			<interceptor-ref name="modelDriven"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+	</package>
+	<!-- 直接访问根路径 -->
+	<package name="Root" namespace="/" extends="struts-default"
+		strict-method-invocation="false">
+		<action name="*_*" class="com.jikexueyuan.action.{1}Action"
+			method="{2}">
+			<result name="loginSuccess">/users/info.jsp</result>
+			<result name="loginFail">/users/login.jsp</result>
+			<result name="regSuccess">/users/reg.jsp</result>
+			<result name="showSuccess">/users/mgr.jsp</result>
+			<result name="getSuccess">/users/info.jsp</result>
+			<result name="deleteSuccess">/users/mgr.jsp</result>
+			<interceptor-ref name="modelDriven"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+	</package>
+</struts>

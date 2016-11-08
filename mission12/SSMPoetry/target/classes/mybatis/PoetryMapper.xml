@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jkxy.poetry.dao.IPoetryDao">
+
+	<cache readOnly="true" size="500" flushInterval="120000"
+		eviction="FIFO"></cache>
+
+	<select id="getRecordCount" resultType="java.lang.Long"
+		parameterType="hashMap">
+		<bind name="pattern" value="'%' + _parameter.key + '%'" />
+		SELECT COUNT(*) FROM poetries LEFT JOIN poets ON poetries.poet_id =
+		poets.id
+		<where>
+			<if test='condition=="poet"'>name = #{key}</if>
+			<if test='condition=="title"'>title = #{key}</if>
+			<if test='condition=="content"'>content LIKE #{pattern}</if>
+		</where>
+	</select>
+	<resultMap type="com.jkxy.poetry.entity.Poetry" id="PoetryMap">
+		<result property="id" column="id" />
+		<result property="content" column="content" />
+		<result property="title" column="title" />
+		<association property="poet" column="poet_id"
+			javaType="com.jkxy.poetry.entity.Poet">
+			<id property="id" column="poet_id" />
+			<result property="name" column="name" />
+		</association>
+	</resultMap>
+	<select id="getPoetry" resultMap="PoetryMap" parameterType="hashMap">
+		<bind name="pattern" value="'%' + _parameter.key + '%'" />
+		SELECT * FROM poetries LEFT JOIN poets ON poetries.poet_id =
+		poets.id
+		<where>
+			<if test='condition=="poet"'>name = #{key}</if>
+			<if test='condition=="title"'>title = #{key}</if>
+			<if test='condition=="content"'>content LIKE #{pattern}</if>
+		</where>
+		LIMIT #{offset},#{size}
+	</select>
+
+</mapper>

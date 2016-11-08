@@ -1,0 +1,110 @@
+body {
+    font-size: 12px;
+    font-family: Arial, Georgia, "Times New Roman", Times, serif;
+    color: #555;
+    text-align: center;
+    background-color: #e2e2e2;
+}
+
+#calculator {
+    width: 240px;
+    height: auto;
+    margin: 10px auto;
+    border: #fff 1px solid;
+    padding-bottom: 10px;
+    background-color: #f2f2f2;
+}
+
+#calcu-head {
+    text-align: left;
+    padding: 10px 15px 5px;
+}
+
+#calcu-head p {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial, Georgia, "Times New Roman", Times, serif;
+    color: #555;
+    text-align: center;
+}
+
+.input {
+    width: 200px;
+    height: 24px;
+    line-height: 24px;
+    padding: 4px;
+    border: #e6e6e6 1px solid;
+    border-bottom: #f2f2f2 1px solid;
+    /*去掉下面和右边的边框*/
+    border-right: #f2f2f2 1px solid;
+    margin: 10px auto;
+    direction: ltr;
+    text-align: left;
+    font-size: 16px;
+    color: #999;
+}
+
+.select {
+    width: 210px;
+    height: 24px;
+    border: #e6e6e6 1px solid;
+    margin: 10px;
+    direction: ltr;
+    text-align: right;
+    font-size: 16px;
+    color: #999;
+}
+
+#calculator ul {
+    padding: 0;
+    margin: 5px 14px;
+    border: #fff 0px solid;
+    height: auto;
+    overflow: hidden
+}
+
+#calculator li {
+    list-style: none;
+    float: left;
+    width: 80px;
+    height: 32px;
+    margin: 5px;
+    display: inline;
+    line-height: 32px;
+    font-size: 14px;
+    background-color: #eaeaea;
+}
+
+#calculator li:hover {
+    /*鼠标悬停样式*/
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+#calculator li:active {
+    /*鼠标点击样式*/
+    background-color: #fc0;
+    cursor: pointer;
+}
+
+span#note {
+    float: left;
+    width: 210px;
+    height: auto;
+    overflow: hidden;
+    color: red;
+}
+
+.result {
+    width: 200px;
+    height: 24px;
+    line-height: 24px;
+    padding: 4px;
+    margin: 10px auto;
+    direction: ltr;
+    text-align: left;
+    font-size: 20px;
+    color: #999;
+    font-family: Arial, Georgia, "Times New Roman", Times, serif;
+    color: #555;
+}

@@ -1,0 +1,14 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="employee" class="com.jikexueyuan.hellospring.Employee"
+		p:name="JohnZ" p:age="27" p:gender="MA" p:address="New York"
+		p:phoneNum="01000000"></bean>
+	<bean id="xmlOutputer" class="com.jikexueyuan.hellospring.XmlOutputHelper"
+		p:employee-ref="employee"></bean>
+	<bean id="jsonOutputer" class="com.jikexueyuan.hellospring.JsonOutputHelper"
+		p:employee-ref="employee"></bean>
+</beans> 

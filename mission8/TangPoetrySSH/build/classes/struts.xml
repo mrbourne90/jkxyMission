@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC 
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- 配置根元素 -->
+<struts>
+	<!--使用spring创建管理struts2的action操作 -->
+	<constant name="struts.objectFactory" value="spring" />
+
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<constant name="struts.serve.static.browserCache" value="false"></constant>
+	<constant name="struts.configuration.xml.reload" value="true"></constant>
+	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.ui.theme" value="simple"></constant>
+
+	<package name="poetries" namespace="/main" extends="struts-default">
+		<action name="getPoetries" class="poetryAction">
+			<result name="success">/main/displayContent.jsp</result>
+			<result name="fail">/main/notFound.jsp</result>
+		</action>
+	</package>
+	<package name="poetries" namespace="/" extends="struts-default">
+		<!-- class的名称  等于spring中action配置文件中的id名称 -->  
+		<action name="getPoetries" class="poetryAction">
+			<result name="success">/main/displayContent.jsp</result>	
+			<result name="fail">/main/notFound.jsp</result>
+		</action>
+	</package>
+</struts>

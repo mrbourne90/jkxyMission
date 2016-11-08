@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>简易计算器</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+    <div class id="calculator">
+        <div id="calcu-head">
+            <p>简易计算器</p>
+            <span id="note"></span>
+        </div>
+        <form action="" method="get">
+            <div>
+                <input type="text" class="input" id="input1" autofocus onmouseleave="checkInput()">
+                <select required id="select" class="select">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                    <option value="%">%</option>
+                </select>
+                <input type="text" class="input" id="input2" onmouseleave="checkInput()">
+                <ul>
+                    <li onclick="calculate()">=</li>
+                </ul>
+                <div class="result"><span id="result"></span></div>
+                
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

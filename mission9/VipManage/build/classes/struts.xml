@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC 
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- 配置根元素 -->
+<struts>
+	<!--使用spring创建管理struts2的action操作 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="strutsenableDynamicMethodInvocation" value="true" />
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<constant name="struts.serve.static.browserCache" value="false"></constant>
+	<constant name="struts.configuration.xml.reload" value="true"></constant>
+	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.ui.theme" value="simple"></constant>
+
+	<!-- 登录action本身不拦截 -->
+	<package name="login" namespace="/" extends="struts-default"
+		strict-method-invocation="false">
+		<action name="login_check" class="userAction" method="check">
+			<result name="check_success">/index/welcome.jsp</result>
+			<result name="check_error">/index/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 其余action均要进行未登录拦截 -->
+	<package name="default" namespace="/" extends="struts-default"
+		strict-method-invocation="false">
+		<!-- 配置用户登录拦截器 -->
+		<interceptors>
+			<interceptor name="userInter" class="userInter"></interceptor>
+			<interceptor-stack name="userStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="userInter"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 设置默认拦截器 -->
+		<default-interceptor-ref name="userStack"></default-interceptor-ref>
+		<!-- 拦截结果处理 -->
+		<global-results>
+			<result name="login" type="redirect">/index/index.jsp</result>
+		</global-results>
+		<action name="login_*" class="userAction" method="{1}">
+			<result name="logout_success">/index/index.jsp</result>
+			<result name="activate_success">/user/userActivate_succcess.jsp</result>
+			<result name="activate_error">/user/userActivate_error.jsp</result>
+			<result name="deactivate_success">/user/userActivate_succcess.jsp</result>
+			<result name="deactivate_error">/user/userActivate_error.jsp</result>
+		</action>
+		<action name="commodity_*" class="commodityAction" method="{1}">
+			<result name="add_success">/commodity/addCommodity_success.jsp</result>
+			<result name="browse_success">/commodity/browseCommodities.jsp</result>
+			<result name="findOne_success">/commodity/browseCommodities.jsp</result>
+			<result name="findOne_error">/commodity/commodityNotFound.jsp</result>
+		</action>
+		<action name="vip_*" class="vipAction" method="{1}">
+			<result name="add_success">/vip/addVip_success.jsp</result>
+			<result name="browse_success">/vip/manageVip.jsp</result>
+			<result name="find_success">/consume/browseVipConsumes.jsp</result>
+			<result name="find_error">/vip/vipNotFound.jsp</result>
+		</action>
+		<action name="consume_*" class="consumeAction" method="{1}">
+			<result name="browse_success">/consume/browseConsumes.jsp</result>
+		</action>
+	</package>
+</struts>

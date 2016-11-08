@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shopping>
+	<goods>
+		<name>iPad</name>
+		<price>2288.88</price>
+		<number>3</number>
+	</goods>
+	<goods>
+		<name>华为Mate</name>
+		<price>2688.88</price>
+		<number>5</number>
+	</goods>
+</shopping>

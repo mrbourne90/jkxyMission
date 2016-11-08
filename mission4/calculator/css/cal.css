@@ -1,0 +1,92 @@
+body {
+    font-size: 14px;
+    font-family: Arial, Georgia, "Times New Roman", Times, serif;
+    color: #555;
+    text-align: center;
+    background-color: #e2e2e2;
+}
+
+#calculator {
+    width: 720px;
+    height: auto;
+    overflow: hidden;
+    margin: 10px auto;
+    border: #fff 1px solid;
+    padding-bottom: 10px;
+    background-color: #f2f2f2;
+}
+
+#calculator div {
+    clear: both;
+}
+
+#calculator ul {
+    padding: 0;
+    margin: 5px 14px;
+    border: #fff 1px solid;
+    height: auto;
+    overflow: hidden
+}
+
+#calculator li {
+    list-style: none;
+    float: left;
+    width: 105px;
+    height: 75px;
+    margin: 5px;
+    display: inline;
+    line-height: 75px;
+    font-size: 25px;
+    border-radius: 10px;
+    background-color: #eaeaea;
+}
+
+#calculator li.tool {
+    background-color: #e2e2e2;
+}
+
+#calculator li:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+#calculator li:active {
+    background-color: #fc0;
+    cursor: pointer;
+}
+
+#calculator li.tool:active {
+    background-color: #d8e8ff;
+    cursor: pointer;
+}
+
+.screen {
+    width: 680px;
+    height: 72px;
+    line-height: 72px;
+    padding: 4px;
+    border: #e6e6e6 1px solid;
+    border-bottom: #f2f2f2 1px solid;
+    border-right: #f2f2f2 1px solid;
+    margin: 10px auto;
+    direction: ltr;
+    text-align: right;
+    font-size: 48px;
+    color: #999;
+}
+
+#calcu-foot {
+    text-align: left;
+    padding: 10px 15px 5px;
+    height: auto;
+    overflow: hidden;
+}
+
+span#note {
+    float: left;
+    width: 630px;
+    height: auto;
+    overflow: hidden;
+    color: red;
+    font-size: 25px;
+}

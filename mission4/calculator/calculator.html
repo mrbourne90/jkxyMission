@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/cal.css">
+    <script type="text/javascript" src="./js/cal.js" defer></script>
+    <title>简单计算器</title>
+</head>
+<body>
+    <div id="calculator">
+        <form name="calculator" action="" method="get">
+            <div id="calcu-screen">
+                <!--显示区 如需防止用户输入 则使用onfocus="this.blur();"避免键盘输入-->
+                <input type="text" name="numScreen" class="screen" value="0" onfocus="this.blur();" />
+            </div>
+            <div id="calcu-btn">
+                <ul>
+                    <div>
+                        <!--按钮区-->
+                        <li class="number" onclick="command(7)">7</li>
+                        <li class="number" onclick="command(8)">8</li>
+                        <li class="number" onclick="command(9)">9</li>
+                        <li class="tool" id="del" onclick="del()">←</li>
+                        <li class="tool" id="clear" onclick="clearScreen()">C</li>
+                        <li class="tool" id="equal" onclick="equal()">=</li>
+                        <li class="number" onclick="command(4)">4</li>
+                        <li class="number" onclick="command(5)">5</li>
+                        <li class="number" onclick="command(6)">6</li>
+                        <li class="tool" id="plus" onclick="plus()">+</li>
+                        <li class="tool" id="minus" onclick="minus()">-</li>
+                        <li class="tool" id="percent" onclick="percent()">%</li>
+                        <li class="number" onclick="command(1)">1</li>
+                        <li class="number" onclick="command(2)">2</li>
+                        <li class="number" onclick="command(3)">3</li>
+                        <li class="tool" id="times" onclick="times()">×</li>
+                        <li class="tool" id="divide" onclick="divide()">÷</li>
+                        <li class="tool" id="sin" onclick="sin()">sin</li>
+                        <li class="number" onclick="command(0)">0</li>
+                        <li id="dzero" onclick="dzero()">00</li>
+                        <li id="dot" onclick="dot()">.</li>
+                        <li class="tool" id="cos" onclick="cos()">cos</li>
+                        <li class="tool" id="tan" onclick="tan()">tan</li>
+                        <li class="tool" id="cot" onclick="cot()">cot</li>
+                    </div>
+                </ul>
+            </div>
+            <div id="calcu-foot">
+                <span id="note"></span>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

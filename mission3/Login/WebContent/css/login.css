@@ -1,0 +1,111 @@
+@CHARSET "UTF-8";
+body {
+    font-size: 12px;
+    font-family: Arial, Georgia, "Times New Roman", Times, serif;
+    color: #555;
+    text-align: left;
+    background-color: #e2e2e2;
+}
+
+#login {
+    width: 400px;
+    height: auto;
+    margin: 10px auto;
+    border: #fff 1px solid;
+    padding-bottom: 10px;
+    background-color: #f2f2f2;
+}
+#content{
+	width: 360px;
+    height: auto;
+    margin: 10px auto;
+    padding-bottom: 10px;
+    background-color: #f2f2f2;
+}
+#login-head {
+    text-align: left;
+    padding: 10px 15px 5px;
+}
+
+#login-head p {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial, Georgia, "Times New Roman", Times, serif;
+    color: #555;
+    text-align: center;
+}
+#content p{
+	font-size: 11px;
+    font-weight: bold;
+    font-family: Arial, Georgia, "Times New Roman", Times, serif;
+    color: #555;
+    text-align: left;
+}
+.input {
+    width: 200px;
+    height: 24px;
+    line-height: 24px;
+    padding: 4px;
+    border: #e6e6e6 1px solid;
+    border-bottom: #f2f2f2 1px solid;
+    /*去掉下面和右边的边框*/
+    border-right: #f2f2f2 1px solid;
+    margin: 10px auto;
+    direction: ltr;
+    text-align: left;
+    font-size: 16px;
+    color: #999;
+}
+span#note {
+    float: left;
+    width: 210px;
+    height: auto;
+    overflow: hidden;
+    color: red;
+}
+#login ul {
+    padding-left: 80px;
+    margin: 5px 14px;
+    border: #fff 0px solid;
+    height: auto;
+    overflow: hidden
+}
+
+#login li {
+    list-style: none;
+    float: left;
+    width: 80px;
+    height: 32px;
+    margin: 5px;
+    display: inline;
+    line-height: 32px;
+    font-size: 14px;
+}
+
+#login li:hover {
+    /*鼠标悬停样式*/
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+#login li:active {
+    /*鼠标点击样式*/
+    background-color: #fc0;
+    cursor: pointer;
+}
+
+
+
+.result {
+    width: 200px;
+    height: auto;
+    line-height: 24px;
+    padding: 4px;
+    margin: 10px auto;
+    direction: ltr;
+    text-align: left;
+    font-size: 18px;
+    color: #999;
+    font-family: Arial, Georgia, "Times New Roman", Times, serif;
+    color: #555;
+}

@@ -1,0 +1,44 @@
+ body {
+        font: 14px/1.5 georgia, simsun, arial;
+    }
+    
+    .mytable {
+        margin: 40px 0 40px 0;
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        /*  消除单元格边界*/
+    }
+    
+    .mytable td {
+        border: 1px solid #ccc;
+        text-align: center;
+        line-height: 1.2;
+    }
+    
+    .mytable th {
+        border: 1px solid #ccc;
+        width: 200px;
+        font-size: 16px;
+        background: #eee;
+    }
+    
+    .mytable tr {}
+    
+    .content {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-box-pack: center;
+        -webkit-box-align: center;
+    }
+    
+    .title {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    
+    #rest {
+        font-size: 16px;
+        background: #eee;
+        font-weight: bold;
+        height: 20px;
+    }
